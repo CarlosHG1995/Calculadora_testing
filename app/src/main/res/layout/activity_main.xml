@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentacion.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/result_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/calculator"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:weightSum="2">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/operations"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:gravity="center"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_size"
+        app:autoSizeStepGranularity="1dp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMaxTextSize="@dimen/text_size"
+        app:autoSizeMinTextSize="@dimen/min_text_size"
+        android:layout_gravity="center"/>
+    <TextSwitcher
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.25"
+        android:padding="15dp"
+        app:autoSizeMaxTextSize="@dimen/text_size"
+        app:autoSizeMinTextSize="@dimen/min_text_size" />
+    </LinearLayout>
+    <include
+        android:id="@+id/calculator"
+        layout="@layout/element_math_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
